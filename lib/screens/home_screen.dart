@@ -13,10 +13,27 @@ class HomeScreen extends StatelessWidget {
           Column(
             children: [
               Row(
-                children: [],
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Column(
+                    children: [
+                      Text("Good Morning"),
+                      Text("Book Tickets")
+                    ],
+                  ),
+                  Container(
+                        color: Colors.red,
+                        width: 100,
+                        height: 70,
+                  )
+                ],
               ),
-              Row(
-                children: [],
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Search icon"),
+                  Text("Empty Space")
+                ],
               )
             ],
           )
