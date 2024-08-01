@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,32 +14,41 @@ class HomeScreen extends StatelessWidget {
       body: ListView(
         //Section 1 - Top
         children: [
-          Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Column(
-                    children: [
-                      Text("Good Morning"),
-                      Text("Book Tickets")
-                    ],
-                  ),
-                  Container(
-                        color: Colors.red,
-                        width: 100,
-                        height: 70,
-                  )
-                ],
-              ),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Search icon"),
-                  Text("Empty Space")
-                ],
-              )
-            ],
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Good Morning", style: TextStyle(
+                          fontSize: 17, fontWeight: FontWeight.w500
+                        )),
+                        SizedBox(height: 5),
+                        Text("Book Tickets",style: TextStyle(
+                          fontSize: 26,fontWeight: FontWeight.w500, color: Color(0xFF3b3b3b)
+                        ))
+                      ],
+                    ),
+                    Container(
+                          color: Colors.red,
+                          width: 100,
+                          height: 70,
+                    )
+                  ],
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Search icon"),
+                    Text("Empty Space")
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),
