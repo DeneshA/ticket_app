@@ -1,9 +1,8 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/rendering.dart';
+import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,9 +11,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppStyles.bgColor,
       body: ListView(
         //Section 1 - Top
         children: [
+          const SizedBox(height: 50),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -35,19 +36,27 @@ class HomeScreen extends StatelessWidget {
                           height: 50,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image: AssetImage("assets/images/logo.png")
+                            image: const DecorationImage(
+                              image: AssetImage(AppMedia.logo)
                             )
                           ),
                     )
                   ],
                 ),
-                const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Search icon"),
-                    Text("Empty Space")
-                  ],
+                const SizedBox(height: 25),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: const Color(0xFFF4F6FD),
+                  ),
+                  child: const Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Icon(FluentSystemIcons.ic_fluent_search_regular,color:Color(0xFFBFC205)),
+                      Text("Search")
+                    ],
+                  ),
                 )
               ],
             ),

@@ -38,9 +38,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     //return const Placeholder();
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("My Tickets"),
-      ),
+      // appBar: AppBar(
+      //   title: const Text("My Tickets"),
+      // ),
       body: appScreens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
