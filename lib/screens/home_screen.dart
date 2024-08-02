@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:ticket_app/base/res/style/app_styles.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -21,22 +22,23 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Good Morning", style: TextStyle(
-                          fontSize: 17, fontWeight: FontWeight.w500
-                        )),
-                        SizedBox(height: 5),
-                        Text("Book Tickets",style: TextStyle(
-                          fontSize: 26,fontWeight: FontWeight.w500, color: Color(0xFF3b3b3b)
-                        ))
+                        Text("Good Morning", style: AppStyles.headLineStyle2),
+                        const SizedBox(height: 5),
+                        Text("Book Tickets",style: AppStyles.headLineStyle1)
                       ],
                     ),
                     Container(
-                          color: Colors.red,
-                          width: 100,
-                          height: 70,
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage("assets/images/logo.png")
+                            )
+                          ),
                     )
                   ],
                 ),
