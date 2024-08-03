@@ -1,5 +1,4 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/screens/home_screen.dart';
 
@@ -11,7 +10,6 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-
   //List is iterated using index
   final appScreens = [
     const HomeScreen(),
@@ -21,18 +19,15 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
 
   //Change our index for BottomNavBar
-  int _selectedIndex =0; //private variable
+  int _selectedIndex = 0; //private variable
 
-  void _onItemTapped(int index){
+  void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
 
     //print("Taped index is $_selectedIndex");
   }
-
-
-
 
   @override
   Widget build(BuildContext context) {
