@@ -5,16 +5,16 @@ void main() {
   // var myList = ["Flutter","Larvel","PHP"];
   runApp(const MyApp()); // This is a entry point for Flutter framework
   // print("${myList.toString()}");
-  var test = TestClass(x: 2, y: 3);
-  print(test.x);
+  // var test = TestClass(x: 2, y: 3);
+  // print(test.x);
 
  // var newTest = test.copyWith(30,40);
-  var newTest = test.copyWith(x: 30); // Coz of Line No. 28 uses {} to pass the optional argument this has to assign with argument name
-  print(newTest.x);
-  print(newTest.y);
-
-  var newTest2 = newTest.copyWith(y:100);
-  print(newTest2.x);
+ //  var newTest = test.copyWith(x: 30); // Coz of Line No. 28 uses {} to pass the optional argument this has to assign with argument name
+ //  print(newTest.x);
+ //  print(newTest.y);
+ //
+ //  var newTest2 = newTest.copyWith(y:100);
+ //  print(newTest2.x);
 }
 //Examples
 class TestClass{

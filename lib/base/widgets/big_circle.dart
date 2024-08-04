@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BigCircle extends StatelessWidget {
-  final isRight;
+  // if your not assign the value for the variable then define the type of it will debug the error
+  final bool isRight;
   const BigCircle({super.key,  required this.isRight });
 
   @override
