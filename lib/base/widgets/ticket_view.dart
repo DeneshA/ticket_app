@@ -24,6 +24,7 @@ class TicketView extends StatelessWidget {
                 topLeft: Radius.circular(21), topRight: Radius.circular(21))),
         child: Column(
           children: [
+            //Show departure and destionation with icon first line
             Row(
               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -34,22 +35,47 @@ class TicketView extends StatelessWidget {
                 Expanded(child: Container()),
                 const BigDot(),
                 //Stack  widget uses for over lapping items
-                const Expanded(child: Stack(children: [
+                Expanded(
+                    child: Stack(children: [
                   //LayoutBuilder() - to get the width / available space between 2 widgets
                   //Flex() - leave space between 2 widget / '--'
                   //List.generate() - generate No. of widget/ '-'
                   //SizeBox() - either use sizedBox or Container to display widget/'-'
-                    SizedBox(
-                      height:24,
-                      child: AppLayoutbuilderWidget(randomDivider: 6,),
-                    ),
-                  // Center(child: Text("Plane"),)
-                ]
-                )),
+                  const SizedBox(
+                    height: 24,
+                    child: AppLayoutbuilderWidget(
+                      randomDivider: 6,
+                    )),
+                  Center(
+                    child: Transform.rotate(
+                        angle: 1.57,
+                        child:  const Icon(
+                          Icons.local_airport_rounded,color:Colors.white,
+                        )),)
+                ])),
                 const BigDot(),
                 Expanded(child: Container()),
                 Text(
-                  "NYC",
+                  "LDN",
+                  style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                )
+              ],
+            ),
+            const SizedBox(height: 3),
+            //Show departure and destination names with time
+            Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "New-York",
+                  style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
+                ),
+                Expanded(child: Container()),
+                Text("8H 30M",
+                style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
+                Expanded(child: Container()),
+                Text(
+                  "London",
                   style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
                 )
               ],
