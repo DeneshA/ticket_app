@@ -44,7 +44,7 @@ class Car extends Vehicle{ //Inheritant
 class Plane extends Vehicle{
   Plane(super.wheels);
 
-  void PlaneType(){
+  void planeType(){
     print("Boing");
   }
 
