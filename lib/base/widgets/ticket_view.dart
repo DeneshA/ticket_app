@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
+import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/base/widgets/big_dot.dart';
 
 class TicketView extends StatelessWidget {
@@ -31,7 +32,7 @@ class TicketView extends StatelessWidget {
                   style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
                 ),
                 Expanded(child: Container()),
-                BigDot(),
+                const BigDot(),
                 //Stack  widget uses for over lapping items
                 const Expanded(child: Stack(children: [
                   //LayoutBuilder() - to get the width / available space between 2 widgets
@@ -39,12 +40,13 @@ class TicketView extends StatelessWidget {
                   //List.generate() - generate No. of widget/ '-'
                   //SizeBox() - either use sizedBox or Container to display widget/'-'
                     SizedBox(
-                      child: Text("--------------------"),
+                      height:24,
+                      child: AppLayoutbuilderWidget(randomDivider: 6,),
                     ),
-                  Center(child: Text("Plane"),)
+                  // Center(child: Text("Plane"),)
                 ]
                 )),
-                BigDot(),
+                const BigDot(),
                 Expanded(child: Container()),
                 Text(
                   "NYC",
