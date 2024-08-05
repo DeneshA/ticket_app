@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 import 'package:ticket_app/base/widgets/app_colum_text_layout.dart';
@@ -114,36 +113,9 @@ class TicketView extends StatelessWidget {
                     children: [
                       AppColumnTextLayout(topText: "1 MAY",bottomText: "DATE",alignment: CrossAxisAlignment.start,),
                       AppColumnTextLayout(topText: "08:00 AM",bottomText: "Departure time",alignment: CrossAxisAlignment.center,),
-                      AppColumnTextLayout(topText: "23",bottomText: "Number",alignment: CrossAxisAlignment.end,),
-
-                  //     Expanded(child: Container()),
-                  //     Text("08:00 AM", style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
-                  //     Expanded(child: Container()),
-                  //     Text(
-                  //       "23",
-                  //       style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                  //     )
+                      AppColumnTextLayout(topText: "23",bottomText: "Number",alignment: CrossAxisAlignment.end,)
                     ],
                   ),
-                  SizedBox(height: 3),
-                  //Show departure and destination names with time
-                  // Row(
-                  //   // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  //   children: [
-                  //     Text(
-                  //       "Date",
-                  //       style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                  //     ),
-                  //     Expanded(child: Container()),
-                  //     Text("Departure time",
-                  //       style: AppStyles.headLineStyle3.copyWith(color: Colors.white),),
-                  //     Expanded(child: Container()),
-                  //     Text(
-                  //       "Number",
-                  //       style: AppStyles.headLineStyle3.copyWith(color: Colors.white),
-                  //     )
-                  //   ],
-                  // )
                 ],
               ),
             ),
