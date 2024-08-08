@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
+import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/widgets/app_colum_text_layout.dart';
 import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/base/widgets/big_circle.dart';
@@ -8,7 +9,8 @@ import 'package:ticket_app/base/widgets/text_style_fourth.dart';
 import 'package:ticket_app/base/widgets/text_style_third.dart';
 
 class TicketView extends StatelessWidget {
-  const TicketView({super.key});
+  final Map<String, dynamic> ticket;
+  const TicketView({super.key, required this.ticket});
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +38,10 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const TextStyleThird(text: "NYC",),
+                      TextStyleThird(text: ticket["from"]['code'],),
                       Expanded(child: Container()),
                       const BigDot(),
+                      //ticket flying icon
                       //Stack  widget uses for over lapping items
                       Expanded(
                           child: Stack(children: [
@@ -60,7 +63,7 @@ class TicketView extends StatelessWidget {
                       ])),
                       const BigDot(),
                       Expanded(child: Container()),
-                      const TextStyleThird(text: "LDN",),
+                      TextStyleThird(text:ticket["to"]["code"],),
                     ],
                   ),
                   const SizedBox(height: 3),
@@ -68,16 +71,16 @@ class TicketView extends StatelessWidget {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const SizedBox(
+                       SizedBox(
                         width: 100,
-                        child: TextStyleFourth(text: 'New-York',),
+                        child: TextStyleFourth(text: ticket["from"]["name"],),
                       ),
                       Expanded(child: Container()),
-                      const TextStyleFourth(text: "08H 30M"),
+                      TextStyleFourth(text: ticket["flying_time"]),
                       Expanded(child: Container()),
-                      const SizedBox(
+                      SizedBox(
                         width: 100,
-                        child: TextStyleFourth(text: "London",align: TextAlign.end,),
+                        child: TextStyleFourth(text: ticket["to"]["name"],align: TextAlign.end,),
                       )
                     ],
                   )
@@ -105,15 +108,15 @@ class TicketView extends StatelessWidget {
                   color: AppStyles.ticketOrange,
                   borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(21), bottomRight: Radius.circular(21))),
-              child: const Column(
+              child: Column(
                 children: [
                   //Show departure and destination with icon first line
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AppColumnTextLayout(topText: "1 MAY",bottomText: "DATE",alignment: CrossAxisAlignment.start,),
-                      AppColumnTextLayout(topText: "08:00 AM",bottomText: "Departure time",alignment: CrossAxisAlignment.center,),
-                      AppColumnTextLayout(topText: "23",bottomText: "Number",alignment: CrossAxisAlignment.end,)
+                      AppColumnTextLayout(topText: ticket["date"],bottomText: "DATE",alignment: CrossAxisAlignment.start,),
+                      AppColumnTextLayout(topText: ticket["departure_time"],bottomText: "Departure time",alignment: CrossAxisAlignment.center,),
+                      AppColumnTextLayout(topText: ticket["number"].toString(),bottomText: "Number",alignment: CrossAxisAlignment.end,)
                     ],
                   ),
                 ],
