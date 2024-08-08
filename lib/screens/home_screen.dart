@@ -68,6 +68,8 @@ class HomeScreen extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                     child: Row(
                       children: ticketList.map((singleTicket) =>  TicketView(ticket:singleTicket)).toList(),
+                      //Limitation of only 2 records/map rendering from the JSON dart file
+                      // children: ticketList.take(2).map((singleTicket) =>  TicketView(ticket:singleTicket)).toList(),
                     ),
                 )
               ],
