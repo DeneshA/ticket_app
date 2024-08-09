@@ -6,6 +6,7 @@ import 'package:ticket_app/base/widgets/app_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
 
 import '../base/utils/all_json.dart';
+import '../base/utils/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -61,8 +62,8 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 40),
-                const AppDoubleText(
-                    bigText: 'Upcoming Flights', smallText: 'View all'),
+                AppDoubleText(
+                    bigText: 'Upcoming Flights', smallText: 'View all',func: () => Navigator.pushNamed(context,AppRoutes.allTickets),),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -71,7 +72,10 @@ class HomeScreen extends StatelessWidget {
                       //Limitation of only 2 records/map rendering from the JSON dart file
                       // children: ticketList.take(2).map((singleTicket) =>  TicketView(ticket:singleTicket)).toList(),
                     ),
-                )
+                ),
+                const SizedBox(height: 40),
+                AppDoubleText(
+                    bigText: 'Hotels', smallText: 'View all',func: () => {},),
               ],
             ),
           ),
