@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
-import 'package:ticket_app/base/utils/all_json.dart';
 import 'package:ticket_app/base/widgets/app_colum_text_layout.dart';
 import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/base/widgets/big_circle.dart';

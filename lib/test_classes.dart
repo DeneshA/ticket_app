@@ -1,19 +1,19 @@
 
 void main() {
   // runApp(const MyApp()); // This is a entry point for Fultter framework
-  print("Hello Dart");
+  // print("Hello Dart");
 
   // var vehicle = Vehicle();
   //     vehicle.wheelsNum();
   // print("Given wheel number is ${vehicle.wheels}");
+  //
+  // var carInst = Car(4); // Instantiate
+  // print("${carInst.wheels}");
+  // carInst.wheelsNum();
+  // carInst.carType();
 
-  var carInst = Car(4); // Instantiate
-  print("${carInst.wheels}");
-  carInst.wheelsNum();
-  carInst.carType();
-
-  var planeInst = Plane(3);
-  planeInst.wheelsNum();
+  // var planeInst = Plane(3);
+  // planeInst.wheelsNum();
 }
 
 abstract class Vehicle{
@@ -31,12 +31,12 @@ class Car extends Vehicle{ //Inheritant
 
 
   void carType(){
-    print("Land runner");
+    // print("Land runner");
   }
 
   @override
   void wheelsNum(){
-    print("The car's wheels number is $wheels");
+    // print("The car's wheels number is $wheels");
   }
 
 }
@@ -45,12 +45,12 @@ class Plane extends Vehicle{
   Plane(super.wheels);
 
   void planeType(){
-    print("Boing");
+    // print("Boing");
   }
 
   @override
   void wheelsNum(){
-    print("The plane's wheels number is $wheels");
+    // print("The plane's wheels number is $wheels");
   }
 
 }
