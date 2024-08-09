@@ -1,4 +1,5 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
@@ -23,6 +24,7 @@ class HomeScreen extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,7 +79,15 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: 40),
                 AppDoubleText(
                     bigText: 'Hotels', smallText: 'View all',func: () => {},),
-                Hotel()
+                const SizedBox(height: 20),
+                const SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                  children: [
+                    Hotel(),
+                    Hotel(),
+                  ],
+                ))
               ],
             ),
           ),
