@@ -48,6 +48,7 @@ class SearchScreen extends StatelessWidget {
           ),
           const SizedBox(height: 15),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 padding:
@@ -74,10 +75,42 @@ class SearchScreen extends StatelessWidget {
                               image: AssetImage(AppMedia.planeSit))),
                     ),
                     const SizedBox(height: 12),
-                    Text("20% discount on the early booking of this flight. Don't miss",
-                    style: AppStyles.headLineStyle2,)
+                    Text(
+                      "20% discount on the early booking of this flight. Don't miss",
+                      style: AppStyles.headLineStyle2,
+                    )
                   ],
                 ),
+              ),
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                    width: size.width * .44,
+                    height: 190,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF3AB8B8),
+                      borderRadius: BorderRadius.circular(18),
+                    ),
+                    child: Column(
+                      //For column it's CrossAxisAlignment NOT MainAxisAlignment
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Discount\nfor survey",
+                          style: AppStyles.headLineStyle2.copyWith(fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                        ),
+                        const SizedBox(height: 10),
+                        Text(
+                          "Take the survey about our services and get discount",
+                          style: AppStyles.headLineStyle3.copyWith(fontWeight: FontWeight.w500,
+                              color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               )
             ],
           )
