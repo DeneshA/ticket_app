@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';
 import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 import 'package:ticket_app/screens/search/widgets/find_tickets.dart';
+import 'package:ticket_app/screens/search/widgets/ticket_promotion.dart';
 
 import '../../base/utils/app_routes.dart';
 import '../../base/widgets/app_double_text.dart';
@@ -14,7 +14,7 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+
     return Scaffold(
       // Need scaffold to color the body
       backgroundColor: AppStyles.bgColor,
@@ -32,7 +32,7 @@ class SearchScreen extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const AppTicketTabs(),
+          const AppTicketTabs(firstTab: "AllTickets",secondTab: "Hotels",),
           const SizedBox(height: 25),
           const AppTextIcon(
               icon: Icons.flight_takeoff_rounded, text: "Departure"),
@@ -47,87 +47,8 @@ class SearchScreen extends StatelessWidget {
             func: () => Navigator.pushNamed(context, AppRoutes.allTickets),
           ),
           const SizedBox(height: 15),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                width: size.width * .42,
-                height: 390,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.shade200,
-                          blurRadius: 1,
-                          spreadRadius: 1)
-                    ]),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 190,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: const DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage(AppMedia.planeSit))),
-                    ),
-                    const SizedBox(height: 12),
-                    Text(
-                      "20% discount on the early booking of this flight. Don't miss",
-                      style: AppStyles.headLineStyle2,
-                    )
-                  ],
-                ),
-              ),
-              Stack(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-                    width: size.width * .44,
-                    height: 190,
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF3AB8B8),
-                      borderRadius: BorderRadius.circular(18),
-                    ),
-                    child: Column(
-                      //For column it's CrossAxisAlignment NOT MainAxisAlignment
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Discount\nfor survey",
-                          style: AppStyles.headLineStyle2.copyWith(fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                        const SizedBox(height: 10),
-                        Text(
-                          "Take the survey about our services and get discount",
-                          style: AppStyles.headLineStyle3.copyWith(fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Positioned( //Stack & positioned widget are MUST comes together
-                    right: -45,
-                    top: -40,
-                    child: Container(
-                      padding: const EdgeInsets.all(30),
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(
-                              width: 18,
-                              color: AppStyles.circleColor,
-                          )
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ],
-          )
+          const TicketPromotion(),
+
         ],
       ),
     );
