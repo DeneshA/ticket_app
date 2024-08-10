@@ -82,10 +82,10 @@ class SearchScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Column(
+              Stack(
                 children: [
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                    padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
                     width: size.width * .44,
                     height: 190,
                     decoration: BoxDecoration(
@@ -99,7 +99,7 @@ class SearchScreen extends StatelessWidget {
                         Text(
                           "Discount\nfor survey",
                           style: AppStyles.headLineStyle2.copyWith(fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                              color: Colors.white),
                         ),
                         const SizedBox(height: 10),
                         Text(
@@ -108,6 +108,20 @@ class SearchScreen extends StatelessWidget {
                               color: Colors.white),
                         ),
                       ],
+                    ),
+                  ),
+                  Positioned( //Stack & positioned widget are MUST comes together
+                    right: -45,
+                    top: -40,
+                    child: Container(
+                      padding: const EdgeInsets.all(30),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          border: Border.all(
+                              width: 18,
+                              color: AppStyles.circleColor,
+                          )
+                      ),
                     ),
                   )
                 ],
