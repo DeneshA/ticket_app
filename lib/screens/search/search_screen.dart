@@ -53,6 +53,7 @@ class SearchScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 width: size.width * .42,
+                height: 390,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white,
@@ -72,6 +73,9 @@ class SearchScreen extends StatelessWidget {
                               fit: BoxFit.cover,
                               image: AssetImage(AppMedia.planeSit))),
                     ),
+                    const SizedBox(height: 12),
+                    Text("20% discount on the early booking of this flight. Don't miss",
+                    style: AppStyles.headLineStyle2,)
                   ],
                 ),
               )
