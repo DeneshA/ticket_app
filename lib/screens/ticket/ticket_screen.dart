@@ -23,7 +23,7 @@ class TicketScreen extends StatelessWidget {
           const SizedBox(height: 20,),
           Container(
             padding: const EdgeInsets.only(left: 16),
-              child: TicketView(ticket: ticketList[0])
+              child: TicketView(ticket: ticketList[0],isColor: true,)
           )
         ],
       ),
