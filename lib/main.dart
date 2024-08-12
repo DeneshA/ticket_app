@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/bottom_nav_bar.dart';
 import 'package:ticket_app/base/utils/app_routes.dart';
 import 'package:ticket_app/screens/home/all_tickets.dart';
+import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 
 void main() {
   // var myList = ["Flutter","Larvel","PHP"];
@@ -56,7 +57,8 @@ class MyApp extends StatelessWidget {
        // home: const BottomNavBar(),
       routes: {
         AppRoutes.homePage: (context) => const BottomNavBar(),
-        AppRoutes.allTickets:(context) => const AllTickets()
+        AppRoutes.allTickets:(context) => const AllTickets(),
+        AppRoutes.ticketScreen:(context) => const TicketScreen()
       },
     );
   }

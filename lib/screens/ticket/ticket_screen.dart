@@ -1,7 +1,5 @@
 import 'package:barcode_widget/barcode_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
@@ -12,23 +10,43 @@ import 'package:ticket_app/screens/ticket/widgets/ticket_positioned_circle.dart'
 import '../../base/utils/all_json.dart';
 import '../../base/widgets/app_colum_text_layout.dart';
 
-class TicketScreen extends StatelessWidget {
+class TicketScreen extends StatefulWidget {
   const TicketScreen({super.key});
+
+  @override
+  State<TicketScreen> createState() => _TicketScreenState();
+}
+
+class _TicketScreenState extends State<TicketScreen> {
+  late int ticketIndex =0;
+  @override
+  void didChangeDependencies() { // this is very useful when you move from one screen to another screen
+    var args = ModalRoute.of(context)!.settings.arguments as Map;
+    print("Passed index ${args["index"]}");
+    ticketIndex = args["index"];
+    // TODO: implement didChangeDependencies
+    super.didChangeDependencies();
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bgColor,
+      appBar: AppBar(
+        title: const Text("Ticket"),
+        backgroundColor: AppStyles.bgColor,
+      ),
       body: Stack(
         children: [
           ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 0),
             children: [
-              const SizedBox(height: 40),
-              Text("Tickets", style: AppStyles.headLineStyle1),
-              const SizedBox(
-                height: 20,
-              ),
+              // const SizedBox(height: 40),
+              // Text("Tickets", style: AppStyles.headLineStyle1),
+              // const SizedBox(
+              //   height: 20,
+              // ),
               const AppTicketTabs(firstTab: "Upcoming", secondTab: "Previous"),
               const SizedBox(
                 height: 20,
@@ -37,7 +55,7 @@ class TicketScreen extends StatelessWidget {
               Container(
                   padding: const EdgeInsets.only(left: 16),
                   child: TicketView(
-                    ticket: ticketList[0],
+                    ticket: ticketList[ticketIndex],
                     isColor: true,
                   )),
               const SizedBox(
@@ -51,7 +69,7 @@ class TicketScreen extends StatelessWidget {
                 color: AppStyles.ticketColor,
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppColumnTextLayout(
@@ -158,7 +176,7 @@ class TicketScreen extends StatelessWidget {
               //Colorful ticket
               Container(
                   padding: const EdgeInsets.only(left: 16),
-                  child: TicketView(ticket: ticketList[0])),
+                  child: TicketView(ticket: ticketList[ticketIndex])),
             ],
           ),
           const TicketPositionedCircle(pos: true),
