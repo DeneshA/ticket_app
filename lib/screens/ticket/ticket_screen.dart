@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
+import 'package:ticket_app/base/widgets/app_layoutbuilder_widget.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
 import 'package:ticket_app/screens/search/widgets/app_ticket_tabs.dart';
 
@@ -31,7 +34,7 @@ class TicketScreen extends StatelessWidget {
             margin: const EdgeInsets.symmetric(horizontal: 15), //to match the top potion of ticket
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
             color: AppStyles.ticketColor,
-            child: const Column(
+            child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,7 +52,53 @@ class TicketScreen extends StatelessWidget {
                       isColor: true,
                     ),
                   ],
-                )
+                ),
+                SizedBox(height: 20),
+                const AppLayoutbuilderWidget(randomDivider: 15,width: 5,isColor: false),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    AppColumnTextLayout(
+                      topText: "2465 5686985265",
+                      bottomText: "Number of E-ticket",
+                      alignment: CrossAxisAlignment.start,
+                      isColor: true,
+                    ),
+                    AppColumnTextLayout(
+                      topText: "B46859",
+                      bottomText: "Booking code",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 20),
+                const AppLayoutbuilderWidget(randomDivider: 15,width: 5,isColor: false),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          children: [
+                            Image.asset(AppMedia.visaCard, scale: 11),
+                            Text("*** 2462",style: AppStyles.headLineStyle3,)
+                          ],
+                        ),
+                        const SizedBox(height: 5,),
+                        Text("Payment method",style: AppStyles.headLineStyle4)
+                      ],
+                    ),
+                    const AppColumnTextLayout(
+                      topText: "\$249.99",
+                      bottomText: "Price",
+                      alignment: CrossAxisAlignment.end,
+                      isColor: true,
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
