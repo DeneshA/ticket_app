@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 import 'package:ticket_app/screens/search/widgets/app_text_icon.dart';

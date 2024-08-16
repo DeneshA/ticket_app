@@ -21,9 +21,12 @@ class _TicketScreenState extends State<TicketScreen> {
   late int ticketIndex =0;
   @override
   void didChangeDependencies() { // this is very useful when you move from one screen to another screen
-    var args = ModalRoute.of(context)!.settings.arguments as Map;
-    print("Passed index ${args["index"]}");
-    ticketIndex = args["index"];
+    if(ModalRoute.of(context)!.settings.arguments!=null){
+      var args = ModalRoute.of(context)!.settings.arguments as Map;
+      print("Passed index ${args["index"]}");
+      ticketIndex = args["index"];
+    }
+
     // TODO: implement didChangeDependencies
     super.didChangeDependencies();
   }
@@ -86,7 +89,7 @@ class _TicketScreenState extends State<TicketScreen> {
                         ),
                       ],
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     const AppLayoutbuilderWidget(
                         randomDivider: 15, width: 5, isColor: false),
                     const SizedBox(height: 20),
@@ -156,7 +159,7 @@ class _TicketScreenState extends State<TicketScreen> {
                         bottomRight: Radius.circular(21),
                         bottomLeft: Radius.circular(21))),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
                     child: BarcodeWidget(
