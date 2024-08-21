@@ -76,7 +76,15 @@ class HomeScreen extends StatelessWidget {
                   child: Row(
                     children: ticketList
                         .take(4)
-                        .map((singleTicket) => TicketView(ticket: singleTicket))
+                        .map((singleTicket) => GestureDetector(
+                            onTap: () {
+                              var index = ticketList.indexOf(singleTicket);
+                              // print("I am Tapped in the index of $index");
+                              Navigator.pushNamed(
+                                  context, AppRoutes.ticketScreen,
+                                  arguments: {"index": index});
+                            },
+                            child: TicketView(ticket: singleTicket)))
                         .toList(),
                     //Limitation of only 2 records/map rendering from the JSON dart file
                     // children: ticketList.take(2).map((singleTicket) =>  TicketView(ticket:singleTicket)).toList(),
@@ -86,7 +94,8 @@ class HomeScreen extends StatelessWidget {
                 AppDoubleText(
                   bigText: 'Hotels',
                   smallText: 'View all',
-                  func: () => Navigator.pushNamed(context,AppRoutes.allHotels,arguments: {}),
+                  func: () => Navigator.pushNamed(context, AppRoutes.allHotels,
+                      arguments: {}),
                 ),
                 const SizedBox(height: 20),
                 SingleChildScrollView(
@@ -94,7 +103,16 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       children: hotelList
                           .take(3)
-                          .map((singleHotel) => Hotel(hotel: singleHotel))
+                          .map((singleHotel) =>
+                              GestureDetector(
+                                onTap: (){
+                                  var index = hotelList.indexOf(singleHotel);
+                                  print("I am Tapped in the index of $index");
+                                  Navigator.pushNamed(context,AppRoutes.hotelDetail,arguments: {
+                                    "index":index
+                                  });
+                                }
+                              ,child: Hotel(hotel: singleHotel)))
                           .toList(),
                     ))
               ],
