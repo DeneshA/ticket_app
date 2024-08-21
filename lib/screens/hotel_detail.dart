@@ -95,16 +95,16 @@ class _HotelDetailState extends State<HotelDetail> {
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
               ),
             ),
-            Container(
+            SizedBox(
               height: 200.0,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
+                  itemCount: hotelList[index]["images"].length,
+                  itemBuilder: (context,imagesIndex) {
                     return Container(
                         margin: const EdgeInsets.all(16),
-                        child: Image.network(
-                            "https://via.placeholder.com/200x200"));
+                        child: Image.asset(
+                            "assets/images/${hotelList[index]["images"][imagesIndex]}"));
                   }),
             )
           ]))
@@ -139,7 +139,7 @@ class _ExpandedTextWidgetState extends State<ExpandedTextWidget> {
   Widget build(BuildContext context) {
     var textWidget = Text(
       widget.text,
-      maxLines: isExpanded ? null : 3,
+      maxLines: isExpanded ? null : 6,
       overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
     );
     return Column(
