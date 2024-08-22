@@ -16,8 +16,9 @@ class AppStyles {
   static Color circleColor = const Color(0xFF189999);
   static Color ticketColor = const Color(0xFFFFFFFF);
   static Color dotColor = const Color(0xFF8ACCF7);
-static Color  planeSecondColor=const Color(0xFFBACCF7);
-
+  static Color planeSecondColor = const Color(0xFFBACCF7);
+  static Color profileLocationColor = const Color(0xFFFEF4F3);
+  static Color profileTextColor = const Color(0xFF526799);
 
   static TextStyle textStyle =
       TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: textColor);
@@ -31,6 +32,6 @@ static Color  planeSecondColor=const Color(0xFFBACCF7);
   static TextStyle headLineStyle3 =
       const TextStyle(fontSize: 17, fontWeight: FontWeight.w500);
 
-  static TextStyle headLineStyle4 =
-       TextStyle(fontSize: 14, fontWeight: FontWeight.w500,color: Colors.grey.shade500);
+  static TextStyle headLineStyle4 = TextStyle(
+      fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey.shade500);
 }
