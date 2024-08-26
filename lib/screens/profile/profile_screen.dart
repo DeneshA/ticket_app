@@ -17,6 +17,7 @@ class ProfileScreen extends StatelessWidget {
           children: [
             const Padding(padding: EdgeInsets.only(top: 40)),
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 //Shows the logo
                 Container(
@@ -34,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const HeadingText(text:  "Book Tickets",isColor: false,),
+                    const HeadingText(text:  "Book Tickets",isColor: false),
 
                     Text(
                       "New-York",
@@ -73,7 +74,11 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     )
                   ],
-                )
+                ),
+                Expanded(child: Container()),
+                Text("Edit",style: TextStyle(
+                  color: AppStyles.primaryColor,fontWeight:FontWeight.w300
+                ),)
               ],
             ),
           ]),

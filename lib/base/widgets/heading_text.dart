@@ -21,8 +21,8 @@ class HeadingText extends StatelessWidget {
       text,
       textAlign: align,
       style: isColor == null
-          ? AppStyles.headLineStyle4.copyWith(color: Colors.white)
-          : AppStyles.headLineStyle4,
+          ? AppStyles.headLineStyle1.copyWith(color: Colors.white)
+          : AppStyles.headLineStyle1,
     );
   }
 }
