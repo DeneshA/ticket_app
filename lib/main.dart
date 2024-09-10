@@ -6,10 +6,16 @@ import 'package:ticket_app/screens/home/all_tickets.dart';
 import 'package:ticket_app/screens/hotel_detail.dart';
 import 'package:ticket_app/screens/ticket/ticket_screen.dart';
 import 'package:get/get.dart';
-
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 void main() {
   // var myList = ["Flutter","Larvel","PHP"];
-  runApp(const MyApp()); // This is a entry point for Flutter framework
+  runApp(
+     ProviderScope(child:  const MyApp())
+  ); // This is a entry point for Flutter framework
+
+
+
+
   // print("${myList.toString()}");
   // var test = TestClass(x: 2, y: 3);
   // print(test.x);
@@ -57,7 +63,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     //when using Gex we cannot use MaterialApp directly therefor use GetMaterialApp
     // return MaterialApp(
-    return GetMaterialApp(
+    // return GetMaterialApp( // disabled coz of cu
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
        // home: const BottomNavBar(),
       routes: {

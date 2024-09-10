@@ -7,7 +7,7 @@ part of 'bottom_nav_provider.dart';
 // **************************************************************************
 
 String _$bottomNavBarNotifierHash() =>
-    r'0fa065882afa89cb011b0a67db554bc2f5de5f83';
+    r'cdbb1cfac90af73dd0abc576b404261d7c5516c0';
 
 /// See also [BottomNavBarNotifier].
 @ProviderFor(BottomNavBarNotifier)
