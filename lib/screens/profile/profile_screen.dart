@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ticket_app/base/res/media.dart';
 import 'package:ticket_app/base/res/style/app_styles.dart';
 import 'package:ticket_app/base/widgets/heading_text.dart';
+import 'package:ticket_app/base/widgets/text_style_third.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -35,8 +36,7 @@ class ProfileScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const HeadingText(text:  "Book Tickets",isColor: false),
-
+                    const HeadingText(text: "Book Tickets", isColor: false),
                     Text(
                       "New-York",
                       style: TextStyle(
@@ -44,9 +44,12 @@ class ProfileScreen extends StatelessWidget {
                           fontWeight: FontWeight.w500,
                           color: Colors.grey.shade500),
                     ),
-                    const SizedBox(height: 8,),
+                    const SizedBox(
+                      height: 8,
+                    ),
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 3,vertical: 3),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 3, vertical: 3),
                       //decoration
                       decoration: BoxDecoration(
                         color: AppStyles.profileLocationColor,
@@ -57,7 +60,7 @@ class ProfileScreen extends StatelessWidget {
                         children: [
                           Container(
                             padding: const EdgeInsets.all(3),
-                            decoration:  BoxDecoration(
+                            decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: AppStyles.profileTextColor),
                             child: const Icon(
@@ -66,19 +69,88 @@ class ProfileScreen extends StatelessWidget {
                               size: 15,
                             ),
                           ),
-                          const SizedBox(width: 5,),
-                           Text("Premium status",style: TextStyle(
-                            color: AppStyles.profileTextColor,fontWeight: FontWeight.w500
-                          ),)
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "Premium status",
+                            style: TextStyle(
+                                color: AppStyles.profileTextColor,
+                                fontWeight: FontWeight.w500),
+                          )
                         ],
                       ),
                     )
                   ],
                 ),
                 Expanded(child: Container()),
-                Text("Edit",style: TextStyle(
-                  color: AppStyles.primaryColor,fontWeight:FontWeight.w300
-                ),)
+                Text(
+                  "Edit",
+                  style: TextStyle(
+                      color: AppStyles.primaryColor,
+                      fontWeight: FontWeight.w300),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            //divider
+            Divider(
+              color: Colors.grey.shade300,
+            ),
+            // const SizedBox(height: 8,),
+            Stack(
+              children: [
+                Container(
+                  height: 90,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: AppStyles.primaryColor,
+                      borderRadius: BorderRadius.circular(18)),
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        maxRadius: 25,
+                        backgroundColor: Colors.white,
+                        child: Icon(
+                          FluentSystemIcons.ic_fluent_lightbulb_filament_filled,
+                          color: AppStyles.primaryColor,
+                          size: 27,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const TextStyleThird(
+                            text: "You\'v got a new award",
+                            isColor: null,
+                          ),
+                          Text(
+                            "You have 95 flights in a year",
+                            style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white.withOpacity(0.8)),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Positioned(
+                  top: -40,
+                    right: -45,
+                    child: Container(
+                      padding: const EdgeInsets.all(30),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 18, color: const Color(0xFF264CD2))),
+                ))
               ],
             ),
           ]),
